@@ -5,8 +5,8 @@ import "./App.css";
 
 function App() {
   const student = {
-    name: "Muhammad Yazid Noor",
-    nim: "4233550013",
+    name: "Alfin Syahri",
+    nim: "4233250012",
     prodi: "Ilmu Komputer",
   };
 
