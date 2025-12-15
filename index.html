@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Praktik Web Modern</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(59,130,246,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139,92,246,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .header-card {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      background: rgba(30, 41, 59, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      padding: 40px 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      animation: fadeInDown 0.6s ease;
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    h1 {
+      font-size: 2.5em;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .subtitle {
+      color: #94a3b8;
+      font-size: 1.1em;
+      margin-bottom: 25px;
+    }
+    
+    .student-info {
+      display: inline-block;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .student-info .name {
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+    
+    .student-info .nim {
+      font-size: 0.9em;
+      opacity: 0.95;
+      margin-top: 2px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+    }
+    
+    li {
+      animation: fadeInUp 0.6s ease backwards;
+    }
+    
+    li:nth-child(1) { animation-delay: 0.1s; }
+    li:nth-child(2) { animation-delay: 0.15s; }
+    li:nth-child(3) { animation-delay: 0.2s; }
+    li:nth-child(4) { animation-delay: 0.25s; }
+    li:nth-child(5) { animation-delay: 0.3s; }
+    li:nth-child(6) { animation-delay: 0.35s; }
+    li:nth-child(7) { animation-delay: 0.4s; }
+    li:nth-child(8) { animation-delay: 0.45s; }
+    li:nth-child(9) { animation-delay: 0.5s; }
+    li:nth-child(10) { animation-delay: 0.55s; }
+    li:nth-child(11) { animation-delay: 0.6s; }
+    li:nth-child(12) { animation-delay: 0.65s; }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    a {
+      display: block;
+      padding: 18px 15px;
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 12px;
+      text-decoration: none;
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 0.95em;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+    
+    a:hover {
+      color: white;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+    
+    a:hover::before {
+      left: 0;
+    }
+    
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: white;
+      font-size: 0.95em;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+      
+      ul {
+        grid-template-columns: 1fr;
+      }
+      
+      .header-card {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-card">
+    <h1>Praktik Web Modern</h1>
+    <p class="subtitle">Kumpulan hasil praktik 2 sampai 13</p>
+    <div class="student-info">
+      <div class="name">Alfin Syahri</div>
+      <div class="nim">NIM: 4233250012</div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <ul>
+      <li><a href="./praktik-2/dist/">Praktik 2</a></li>
+      <li><a href="./praktik-3/dist/">Praktik 3</a></li>
+      <li><a href="./praktik-4/dist/">Praktik 4</a></li>
+      <li><a href="./praktik-5/dist/">Praktik 5</a></li>
+      <li><a href="./praktik-6/dist/">Praktik 6</a></li>
+      <li><a href="./praktik-7/dist/">Praktik 7</a></li>
+      <li><a href="./praktik-8/dist/">Praktik 8</a></li>
+      <li><a href="./praktik-9/dist/">Praktik 9</a></li>
+      <li><a href="./praktik-10/dist/">Praktik 10</a></li>
+      <li><a href="./praktik-11/dist/">Praktik 11</a></li>
+      <li><a href="./praktik-12/dist/">Praktik 12</a></li>
+      <li><a href="./praktik-13/dist/">Praktik 13</a></li>
+    </ul>
+  </div>
+  
+  <footer>
+    © 2025 • Praktik Web Modern • Alfin Syahri
+  </footer>
+</body>
+</html>
