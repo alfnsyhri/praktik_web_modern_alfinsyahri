@@ -6,7 +6,7 @@ import './index.css'
 import App from './App.jsx'
 
 // Basename harus sama dengan nama folder/repositori Anda
-const BASE_PATH = "/praktik_web_modern_alfinsyahri/praktik-8"; 
+const BASE_PATH = "/praktik_web_modern_alfinsyahri/praktik-8/dist"; 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
